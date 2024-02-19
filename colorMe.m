@@ -102,7 +102,7 @@ switch colorScheme
         set(tefHandle, {'BackgroundColor'}, repmat(colors(4), size(tefHandle)));
 
         % ListBox
-        set(tbl_Handle, {'BackgroundColor'}, repmat([0 0 0], 2, 1));    % doesn't work
+        % set(tbl_Handle, {'BackgroundColor'}, repmat([0 0 0], 2, 1));    % doesn't work
 
     case 'LightMode'
 end
