@@ -12,7 +12,6 @@ app.selectButton_3.Enable = 'off';
 app.selectButton_4.Enable = 'off';
 app.UIAxes.Visible = 'off';
 app.Slider.Enable = 'off';
-app.SetButton.Enable = 'off';
 
 % Defaults
 app.FPSEditField.Value = 0;
@@ -22,5 +21,7 @@ app.EditField.Value = 'Reach';
 app.EditField2.Value = 'Still';
 app.EditField3.Value = 'MIA';
 app.EditField4.Value = 'Other';
+
+%% Kinematics
 end
 
