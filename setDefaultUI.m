@@ -23,5 +23,9 @@ app.EditField3.Value = 'MIA';
 app.EditField4.Value = 'Other';
 
 %% Kinematics
+app.ListBox.Items = {};
+app.Slider_2.Visible = 'off';
+app.PositionPanel.Visible = 'off';
+app.VelocityPanel.Visible = 'off';
 end
 
