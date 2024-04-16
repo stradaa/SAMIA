@@ -31,5 +31,8 @@ app.ListBox.Items = {};
 app.Slider_2.Visible = 'off';
 app.PositionPanel.Visible = 'off';
 app.VelocityPanel.Visible = 'off';
+app.AutoSegmentButton.Enable = 'off';
+
+% nans
 end
 
