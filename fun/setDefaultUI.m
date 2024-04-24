@@ -13,9 +13,7 @@ app.selectButton_4.Enable = 'off';
 app.UIAxes.Visible = 'off';
 app.Slider.Enable = 'off';
 app.GridLayout24.Visible = 'off';
-app.GotosegmentendMenu.Enable = 'off';
-app.GotosegmentstartMenu.Enable = 'off';
-app.PlayMenu.Enable = 'off';
+app.GotosegmentMenu.Enable = 'off';
 
 % Defaults
 app.FPSEditField.Value = 0;
