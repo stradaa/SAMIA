@@ -32,4 +32,11 @@ app.VelocityPanel.Visible = 'off';
 app.AutoSegmentButton.Enable = 'off';
 
 % nans
+app.UIAxes2.Visible = 'off';
+app.Spinner.Enable = 'off';
+app.SmoothButton.Enable = 'off';
+app.ImputationMeanButton.Enable = 'off';
+app.InterpolateButton.Enable = 'off';
+app.RESETButton.Enable = 'off';
+app.Lamp.Color = [0.5,0.5,0.5];
 end
