@@ -35,6 +35,7 @@ app.AutoSegmentButton.Enable = 'off';
 app.UIAxes2.Visible = 'off';
 app.Spinner.Enable = 'off';
 app.SmoothButton.Enable = 'off';
+app.smoothwindowmsEditField.Value = 50;     % 50 ms
 app.ImputationMeanButton.Enable = 'off';
 app.InterpolateButton.Enable = 'off';
 app.RESETButton.Enable = 'off';
