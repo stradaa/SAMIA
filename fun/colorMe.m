@@ -14,6 +14,13 @@ colors{4} = '#161B22';  % gray
 colors{6} = '#43A0EB';  % highlight blue
 colors{7} = '#238636';  % github green
 
+colors{8} = '#02052c';  % simia_background
+colors{9} = '#fef5d1';  % bright simia highlight
+colors{10} = '#fde6b2'; % cream simia highlight
+colors{11} = '#5E87C9'; % bright blue
+colors{13} = '#2D2D2D'; % #202020'; % dark gray
+colors{12} = '#191919'; %'#29233D'; % dark purple
+
 %% Determine Color Selection
 % FontWeight - Bold
 fwHandle = findobj(app.UIFigure, '-property', 'FontWeight',...
@@ -96,15 +103,56 @@ switch colorScheme
         set(spinHandle, {'BackgroundColor'}, repmat(colors(4), size(spinHandle)));
 
         % Edit Field (Numeric)
-        set(efHandle, {'BackgroundColor'}, repmat(colors(4), size(efHandle)));
+        set(efHandle, {'BackgroundColor'}, repmat(colors(1), size(efHandle)));
         
         % Edit Field (Text)
-        set(tefHandle, {'BackgroundColor'}, repmat(colors(4), size(tefHandle)));
+        set(tefHandle, {'BackgroundColor'}, repmat(colors(1), size(tefHandle)));
 
         % ListBox
         % set(tbl_Handle, {'BackgroundColor'}, repmat([0 0 0], 2, 1));    % doesn't work
 
-    case 'LightMode'
+    case 'Simia'
+
+        % FontColor Label -FontWeight -Bold
+        set(fwBold, {'FontColor'}, repmat(colors(2), size(fwBold)));
+
+        % FontColor Label -FontWeight -Normal
+        set(fwNormal, {'FontColor'}, repmat(colors(2), size(fwNormal)));
+
+        % ForeGround Color -Panel -BoderType -Lined
+        set(btLined, {'ForegroundColor'}, repmat(colors(11), size(btLined)));
+        set(btLined, {'BackgroundColor'}, repmat(colors(13), size(btLined)));
+
+        % ForeGround Color -Panel -BoderType -None
+        set(btNone, {'ForegroundColor'}, repmat(colors(2), size(btNone)));
+        set(btNone, {'BackgroundColor'}, repmat(colors(13), size(btNone)));
+
+        % Grids
+        set(gdHandle, {'BackgroundColor'}, repmat(colors(12), size(gdHandle)));
+
+        % Buttons
+        set(bttnHandle, {'BackgroundColor'}, repmat(colors(1), size(bttnHandle)));
+        
+        % ListBox
+        set(lbxHandle, {'BackgroundColor'}, repmat(colors(13), size(lbxHandle)));
+
+        % TextAreas
+        set(txtaHandle, {'BackgroundColor'}, repmat(colors(13), size(txtaHandle)));
+        
+        % State Button
+        set(stbtnHandle, {'BackgroundColor'}, repmat(colors(1), size(stbtnHandle)));
+
+        % Drop Downs
+        set(dbHandle, {'BackgroundColor'}, repmat(colors(1), size(dbHandle)));
+
+        % Spinners
+        set(spinHandle, {'BackgroundColor'}, repmat(colors(1), size(spinHandle)));
+
+        % Edit Field (Numeric)
+        set(efHandle, {'BackgroundColor'}, repmat(colors(1), size(efHandle)));
+        
+        % Edit Field (Text)
+        set(tefHandle, {'BackgroundColor'}, repmat(colors(1), size(tefHandle)));
 end
 
 end
