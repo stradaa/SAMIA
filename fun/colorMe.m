@@ -18,8 +18,8 @@ colors{8} = '#02052c';  % simia_background
 colors{9} = '#fef5d1';  % bright simia highlight
 colors{10} = '#fde6b2'; % cream simia highlight
 colors{11} = '#5E87C9'; % bright blue
-colors{13} = '#2D2D2D'; % #202020'; % dark gray
-colors{12} = '#191919'; %'#29233D'; % dark purple
+colors{13} = '#2D2D2D'; % 
+colors{12} = '#191919'; %'
 
 %% Determine Color Selection
 % FontWeight - Bold
@@ -62,8 +62,8 @@ efHandle = findobj(app.UIFigure, 'Type', 'uinumericeditfield');
 % Text Edit Fields - ALL
 tefHandle = findobj(app.UIFigure, 'Type', 'uieditfield');
 
-% Tables - ALL
-tbl_Handle = findobj(app.UIFigure, 'Type', 'uitable');
+% Tables - ALL 
+% tbl_Handle = findobj(app.UIFigure, 'Type', 'uitable');
 
 switch colorScheme
     case 'DarkMode'
