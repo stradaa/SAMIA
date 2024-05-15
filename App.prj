@@ -8,7 +8,7 @@
       <file>${PROJECT_ROOT}\App_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\App_resources\icon_16.png</file>
     </param.icons>
-    <param.version>1.3</param.version>
+    <param.version>1.5</param.version>
     <param.authnamewatermark>Alex</param.authnamewatermark>
     <param.email>aestra@seas.upenn.edu</param.email>
     <param.company>Peseran Lab</param.company>
@@ -80,13 +80,18 @@
     <fileset.resources>
       <file>${PROJECT_ROOT}\fun\colorMe.m</file>
       <file>${PROJECT_ROOT}\fun\load_app_simia.m</file>
+      <file>${PROJECT_ROOT}\fun\load_raw_ecog.m</file>
       <file>${PROJECT_ROOT}\fun\parse_vid_name.m</file>
+      <file>${PROJECT_ROOT}\fun\play_neural.m</file>
+      <file>${PROJECT_ROOT}\fun\prep_neural.m</file>
       <file>${PROJECT_ROOT}\fun\reach_segmentation.m</file>
+      <file>${PROJECT_ROOT}\fun\select_eeg.m</file>
       <file>${PROJECT_ROOT}\fun\setDefaultUI.m</file>
       <file>${PROJECT_ROOT}\fun\setProperties.m</file>
     </fileset.resources>
     <fileset.package />
     <fileset.depfun>
+      <file>${PROJECT_ROOT}\el_data.mat</file>
       <file>${PROJECT_ROOT}\images\created_by_alex.png</file>
       <file>${PROJECT_ROOT}\images\simia_title.png</file>
     </fileset.depfun>
