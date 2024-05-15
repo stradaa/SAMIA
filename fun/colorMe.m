@@ -155,5 +155,78 @@ switch colorScheme
         set(tefHandle, {'BackgroundColor'}, repmat(colors(1), size(tefHandle)));
 end
 
+% X = x;
+% Y = y;
+% 
+% % fix bad channels
+% for i = 1:length(bad_ch)
+%     index = bad_ch(i);
+%     X(index) = [];
+%     Y(index) = [];
+% end
+% 
+%  % Prepare the figure and scatter plot
+% fig = figure;
+% scatterPlot = scatter(X, Y, 200, 'filled'); % 100 is the marker size
+% colorbar; % Add a colorbar to indicate voltage scale
+% clim([min(temp_save(:)), max(temp_save(:))]); % Set the color axis scaling according to min and max voltage
+% axis equal;
+% xlabel('X Position');
+% ylabel('Y Position');
+% title('Electrode Voltage Activity');
+% 
+% % Number of frames
+% % numFrames = size(temp_save, 2);
+% numFrames = 10000;
+% 
+% % Loop through each time point and update the scatter plot
+% for t = 1:numFrames
+%     % Update the color data for each point
+%     scatterPlot.CData = temp_save(:, t);
+%     title(sprintf('Electrode Voltage Activity at Time %d', t));
+%     drawnow;
+% 
+%     % Pause for the specified time to control the frame rate
+%     pause(0.001);
+% end
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% % Define the grid limits
+% gridX = linspace(min(X), max(X), 100); % 100 can be adjusted for finer resolution
+% gridY = linspace(min(Y), max(Y), 100); % 100 can be adjusted for finer resolution
+% [gridX, gridY] = meshgrid(gridX, gridY);
+% 
+% % Prepare the figure
+% fig = figure;
+% colormap jet; % Set the colormap (can be adjusted as needed)
+% colorBar = colorbar;
+% clim([min(temp_save(:)), max(temp_save(:))]); % Set the color axis scaling according to min and max voltage
+% hold on;
+% axis equal;
+% xlabel('X Position');
+% ylabel('Y Position');
+% title('Interpolated Electrode Voltage Activity');
+% 
+% % Loop through each time point
+% for t = 1:size(temp_save, 2)
+%     % Interpolate data onto the grid
+%     Z = griddata(X, Y, temp_save(:, t), gridX, gridY, 'natural'); % 'natural' method can be changed as needed
+% 
+%     % Display the data
+%     imagesc(gridX(1,:), gridY(:,1), Z);
+%     set(gca, 'YDir', 'normal'); % Ensure the y-axis is not flipped
+%     colorBar.Label.String = 'Voltage (mV)'; % Update colorbar label
+%     title(sprintf('Interpolated Voltage Activity at Time %d', t));
+%     drawnow;
+% 
+%     % Pause for the specified time to control the frame rate
+%     pause(0.000001);
+% end
+
 end
+
+
+
 
