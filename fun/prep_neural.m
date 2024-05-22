@@ -5,14 +5,32 @@ arguments
     app
 end
 
-% Settings
-marker_size = 150;
-
+%% Settings
+marker_size = app.MarkerSizeEditField.Value;
 load_info = size(app.Data.eeg.original);
+
+% Selection
+app.Status.neural.selected = [];
+switch app.byPCBButtonGroup.SelectedObject.Text
+    case 'All'
+        app.Status.neural.selected = 1:load_info(1);
+    case 'Arm 1'
+        app.Status.neural.selected = find(app.Data.eeg.pcb_id==1 | app.Data.eeg.pcb_id==2);
+    case 'Arm 2'
+        app.Status.neural.selected = find(app.Data.eeg.pcb_id==3 | app.Data.eeg.pcb_id==4);
+    case 'Arm 3'
+        app.Status.neural.selected = find(app.Data.eeg.pcb_id==5 | app.Data.eeg.pcb_id==6);
+    case 'Arm 4'
+        app.Status.neural.selected = find(app.Data.eeg.pcb_id==7 | app.Data.eeg.pcb_id==8);
+end
 
 % Slider
 app.Slider_3.Limits = [1, load_info(2)];
 app.Slider_3.Value = 1;
+new_values = linspace(1, load_info(2)/app.SamplingRateEditField.Value, length(app.Slider_3.MajorTickLabels));
+% Convert the array to a cell array of strings
+new_majorticklabels = arrayfun(@num2str, new_values, 'UniformOutput', false);
+app.Slider_3.MajorTickLabels = new_majorticklabels;
 
 % Drop Downs
 app.DropDown_2.Value = 'jet';
@@ -23,8 +41,8 @@ if isempty(app.Data.eeg.el_x)
     disp("Create genereic grid and alert the user. TOTO")
     return
 else
-    app.Data.eeg.scatterPlot = scatter(app.Data.eeg.el_x, ...
-                                       app.Data.eeg.el_y, ...
+    app.Data.eeg.scatterPlot = scatter(app.Data.eeg.el_x(app.Status.neural.selected), ...
+                                       app.Data.eeg.el_y(app.Status.neural.selected), ...
                                        marker_size, 'filled', ...
                                        'Parent', app.UIAxes6);
 
@@ -36,13 +54,20 @@ else
     set(get(app.UIAxes6, 'xlabel'), 'string', 'X Position')
     colorbar(app.UIAxes6, "Color",'w');
     title(app.UIAxes6, 'Electrode Positions', 'Color','w')
-    clim(app.UIAxes6, [min(app.Data.eeg.original(:)), max(app.Data.eeg.original(:))]);
+    min_crange = min(app.Data.eeg.original(app.Status.neural.selected,:), [], 'all');
+    max_crange = max(app.Data.eeg.original(app.Status.neural.selected,:), [], 'all');
+    clim(app.UIAxes6, [min_crange, max_crange]);
     axis(app.UIAxes6, 'padded')
 end
 
 %% Grid
-gridX = linspace(min(app.Data.eeg.el_x), max(app.Data.eeg.el_x), app.GridResolutionEditField.Value); 
-gridY = linspace(min(app.Data.eeg.el_y), max(app.Data.eeg.el_y), app.GridResolutionEditField.Value);
+min_el_x = min(app.Data.eeg.el_x(app.Status.neural.selected));
+max_el_x = max(app.Data.eeg.el_x(app.Status.neural.selected));
+min_el_y = min(app.Data.eeg.el_y(app.Status.neural.selected));
+max_el_y = max(app.Data.eeg.el_y(app.Status.neural.selected));
+
+gridX = linspace(min_el_x, max_el_x, app.GridResolutionEditField.Value); 
+gridY = linspace(min_el_y, max_el_y, app.GridResolutionEditField.Value);
 [app.Data.eeg.gridX, app.Data.eeg.gridY] = meshgrid(gridX, gridY);
 
 % Set default numbers automatically

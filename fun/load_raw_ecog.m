@@ -19,6 +19,7 @@ if strcmp(event.Source.Text, 'Load Neural')
             'last_val_load', [], ...
             'original', []);
     a.Data.eeg = eeg;
+    a.byPCBButtonGroup.SelectedObject = a.AllButton;
     new_msg = sprintf(">>Loading new file");
     a.TextArea_3.Value = vertcat(a.TextArea_3.Value, new_msg);
 end
