@@ -25,6 +25,8 @@ switch app.byPCBButtonGroup.SelectedObject.Text
 end
 
 % Slider
+pause(0.01)
+app.Slider_3.MajorTickLabelsMode = 'auto';
 app.Slider_3.Limits = [1, load_info(2)];
 app.Slider_3.Value = 1;
 new_values = linspace(1, load_info(2)/app.SamplingRateEditField.Value, length(app.Slider_3.MajorTickLabels));

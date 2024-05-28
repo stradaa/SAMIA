@@ -75,4 +75,3 @@ S.video_analysis = video_analysis;
 S.kinematics = kinematics;
 S.nans = nans;
 S.neural = neural;
-end
